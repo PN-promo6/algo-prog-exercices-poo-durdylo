@@ -8,12 +8,12 @@
 //
 // Dans un algorithme, créez deux instances de cette classe (la 1ère avec un paramètre optionnel, l’autre sans le paramètre optionnel), et afficher les détails de chaque objet crée.
 
-class ticket{
+class Ticket{
   price : number;
   hour : string;
   placeNumber : number;
   artist : string;
-  name : string;
+  name : string = "";
 
   constructor(price:number,hour:string,placeNumber:number,artist:string,name? : string){
     this.price=price;
@@ -30,12 +30,12 @@ class ticket{
     <p>Heure du concert : ${this.hour}</p>
     <p>Numero de place : ${this.placeNumber}</p>
     <p>prix de la place : ${this.price}</p>`;
-    if(this.name){
+    if(this.name != ""){
       info = info +`<p>Titulaire du ticket : ${this.name}</p>`;
     }
     return info;
   }
 }
-let ticketJul :ticket = new ticket (30,"20h50",3299,"JUL","Samy");
-let ticketJul2 :ticket = new ticket (30,"20h50",3298,"JUL");
+let ticketJul :Ticket = new Ticket (30,"20h50",3299,"JUL","Samy");
+let ticketJul2 :Ticket = new Ticket (30,"20h50",3298,"JUL");
 console.log(ticketJul.htmlContent());
