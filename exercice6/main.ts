@@ -8,8 +8,8 @@
 //Exercice 6 : Créez une classe ClientProfessionnel qui étend la classe Client et qui a comme attribut un numéro SIRET.
 
 class CustomerBank {
-  name: string;
-  accountBank: string;
+  private name: string;
+  private accountBank: string;
   constructor(name: string, accountBank: string) {
     this.name = name;
     this.accountBank = accountBank;
@@ -33,6 +33,7 @@ class ProfesionelClient extends CustomerBank {
     this.siretNumber = siretNumber;
   }
 }
+
 let customer: CustomerBank = new CustomerBank("matt", "nb4509TR");
 customer.getAccountBank();
 // console.log(customer.getAccountBank());
