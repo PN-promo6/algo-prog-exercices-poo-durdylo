@@ -21,30 +21,32 @@ class Ticket
   public $artist;
   public $name;
 
-  function __construct($price,$hour,$placeNumber,$artist,$name=NULL)
+  function __construct($price, $hour, $placeNumber, $artist, $name = NULL)
   {
     // code...
-    $this->price=$price;
-    $this->hour=$hour;
-    $this->placeNumber=$placeNumber;
-    $this->artist=$artist;
+    $this->price = $price;
+    $this->hour = $hour;
+    $this->placeNumber = $placeNumber;
+    $this->artist = $artist;
     if (!is_null($name)) {
       // code...
-      $this->name=$name;
-
+      $this->name = $name;
     }
   }
-  function htmlContent(){
-    $displayHTML = "<p>Nom de l'artiste : ".$this->artist. "</p>
-    <p>Heure du concert : ".$this->hour.  "</p>
-    <p>Numero de place : ".$this->placeNumber. "</p>
-    <p>prix de la place : " .$this->price. "</p>";
+  function htmlContent()
+  {
+    $displayHTML = "<p>Nom de l'artiste : " . $this->artist . "</p>
+    <p>Heure du concert : " . $this->hour .  "</p>
+    <p>Numero de place : " . $this->placeNumber . "</p>
+    <p>prix de la place : " . $this->price . "</p>";
     if (!is_null($this->name)) {
-      $displayHTML = $displayHTML . "<p>Nom de l'artiste : " .$this->name. "</p>";
+      $displayHTML = $displayHTML . "<p>Prénom du client : " . $this->name . "</p>";
       // code...
     }
     return $displayHTML;
   }
 }
-$ticketJul = new Ticket (30,"20h50",3299,"JUL","Samy");
+$ticketJul = new Ticket(30, "20h50", 3299, "JUL", "Samy");
 echo ($ticketJul->htmlContent());
+$ticketSkillet = new Ticket(30, "20h50", 3299, "Skillet");
+echo ($ticketSkillet->htmlContent());
